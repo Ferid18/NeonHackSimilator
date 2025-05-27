@@ -28,7 +28,7 @@ Oyunçular müxtəlif hack tapşırıqları yerinə yetirir, səviyyə və inven
 Demo üçün (və ya canlı baxış üçün) layihənin son versiyasını açın və ya aşağıdakı linkdən istifadə edin:
 
 > **Demo linki əlavə etmək üçün buraya link yerləşdirin:**  
-> [Demo üçün buraya klikləyin](#)  
+> [Demo üçün buraya klikləyin](https://ferid18.github.io/NeonHackSimilator/)  
 
 ---
 
