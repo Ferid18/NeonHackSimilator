@@ -1,0 +1,262 @@
+body {
+    background: linear-gradient(135deg, #101820 0%, #1a2a2a 100%);
+    color: #00ff99;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    margin: 0;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+body.light-theme {
+    background: linear-gradient(135deg, #f6f6f6 0%, #e0f7fa 100%);
+    color: #222;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #181f1f;
+    border-bottom: 2px solid #00ff99;
+    padding: 0 32px 0 16px;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px #00ff9933;
+}
+.profile-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: transparent;
+}
+#avatar {
+    border-radius: 50%;
+    border: 2.5px solid #00ff99;
+    box-shadow: 0 0 12px #00ff99;
+    background: #222;
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+#profile-info {
+    font-size: 19px;
+    color: #00ff99;
+    line-height: 1.4;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    min-width: 240px;
+    letter-spacing: 0.5px;
+    background: rgba(0,255,153,0.07);
+    border-radius: 8px;
+    padding: 7px 18px;
+    box-shadow: 0 0 8px #00ff9944;
+    transition: background 0.2s, color 0.2s;
+}
+#theme-toggle {
+    background: #222;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 12px #00ff99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#theme-toggle:hover {
+    background: #00ff99;
+    color: #181f1f;
+    border: 2px solid #fff;
+    box-shadow: 0 0 18px #00ff99;
+}
+h1 {
+    text-align: center;
+    color: #00ff99;
+    letter-spacing: 2px;
+    margin-top: 32px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+    font-size: 2.2rem;
+}
+.controls {
+    text-align: center;
+    margin-bottom: 18px;
+}
+.controls button {
+    background: #111;
+    color: #00ff99;
+    border: 1.5px solid #00ff99;
+    border-radius: 7px;
+    font-size: 17px;
+    margin: 0 7px 10px 7px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 8px #00ff9944;
+}
+.controls button:hover {
+    background: #00ff99;
+    color: #181f1f;
+    border: 1.5px solid #fff;
+    box-shadow: 0 0 16px #00ff99;
+}
+#terminal {
+    background: rgba(10,20,20,0.97);
+    width: 700px;
+    height: 420px;
+    margin: 0 auto 10px auto;
+    padding: 24px 18px 18px 18px;
+    border-radius: 12px;
+    overflow-y: auto;
+    box-shadow: 0 0 30px #00ff99;
+    font-size: 18px;
+    border: 1.5px solid #00ff99;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+#terminal div {
+    margin-bottom: 6px;
+    line-height: 1.5;
+    word-break: break-all;
+}
+#input {
+    display: block;
+    width: 700px;
+    margin: 0 auto 30px auto;
+    background: #181f1f;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 10px 12px;
+    outline: none;
+    box-shadow: 0 0 10px #00ff99 inset;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+}
+#input:focus {
+    border: 2px solid #fff;
+    box-shadow: 0 0 20px #00ff99;
+    background: #222;
+}
+.modal-bg {
+    display: none;
+    position: fixed;
+    left:0; top:0; width:100vw; height:100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    background: #181f1f;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    border-radius: 12px;
+    min-width: 320px;
+    max-width: 90vw;
+    min-height: 120px;
+    max-height: 80vh;
+    padding: 28px 24px;
+    z-index: 101;
+    box-shadow: 0 0 30px #00ff99;
+    overflow-y: auto;
+    font-size: 18px;
+}
+body.light-theme .top-bar,
+body.light-theme .profile-bar,
+body.light-theme #terminal,
+body.light-theme .modal,
+body.light-theme .news-panel {
+    background: #fff !important;
+    color: #222 !important;
+    border-color: #00bfae !important;
+    box-shadow: 0 2px 16px #00bfae33;
+}
+body.light-theme #profile-info,
+body.light-theme #theme-toggle {
+    color: #00bfae !important;
+    border-color: #00bfae !important;
+    background: #e0f7fa !important;
+}
+body.light-theme #theme-toggle {
+    background: #fff !important;
+}
+body.light-theme #theme-toggle:hover {
+    background: #00bfae !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+.news-panel {
+    position: fixed;
+    right: 0;
+    top: 80px;
+    width: 270px;
+    background: #181f1f;
+    color: #00ff99;
+    border-left: 2px solid #00ff99;
+    padding: 18px 18px 18px 18px;
+    font-size: 16px;
+    height: 60vh;
+    overflow-y: auto;
+    z-index: 100;
+    border-radius: 16px 0 0 16px;
+    box-shadow: -2px 0 18px #00ff9944;
+    transition: right 0.3s, opacity 0.3s;
+    display: block;
+}
+#news-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: transparent;
+    color: #00ff99;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+#news-close:hover {
+    color: #ff4444;
+}
+#news-toggle {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    background: #181f1f;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 12px #00ff99;
+}
+body.light-theme .news-panel {
+    background: #fff !important;
+    color: #00bfae !important;
+    border-color: #00bfae !important;
+    box-shadow: -2px 0 16px #00bfae33;
+}
+body.light-theme #news-close {
+    color: #00bfae !important;
+}
+body.light-theme #news-close:hover {
+    color: #ff4444 !important;
+}
+@media (max-width: 800px) {
+    #terminal, #input { width: 98vw; }
+    .news-panel { display: none; }
+    .top-bar { flex-direction: column; height: auto; padding: 8px 0; }
+    .profile-bar { margin-bottom: 8px; }
+}
+@media (max-width: 900px) {
+    .news-panel { display: none !important; }
+    #news-toggle { display: none !important; }
+}

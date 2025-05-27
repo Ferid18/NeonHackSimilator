@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Similator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="profile-bar">
+            <img id="avatar" src="" width="48" height="48">
+            <div id="profile-info"></div>
+        </div>
+        <button id="theme-toggle" onclick="toggleTheme()" title="Tema dəyiş">🌙</button>
+    </div>
+    <h1>Hacker Similator</h1>
+    <div class="controls">
+        <button onclick="showScreen('profil')">Profil</button>
+        <button onclick="showScreen('market')">Market</button>
+        <button onclick="showScreen('missiya')">Missiya</button>
+        <button onclick="showScreen('statistika')">Statistika</button>
+        <button onclick="showScreen('liderler')">Liderlər</button>
+        <button onclick="showScreen('log')">Hack Tarixi</button>
+        <button onclick="showScreen('lab')">Laboratoriya</button>
+        <button onclick="showScreen('forum')">Forum</button>
+        <button onclick="clearTerminal()">Terminalı Təmizlə</button>
+    </div>
+    <div id="terminal"></div>
+    <input id="input" type="text" autocomplete="off" placeholder="Komanda yazın və Enter basın...">
+    <button id="news-toggle" onclick="toggleNewsPanel()" title="Xəbərləri göstər/gizlət" style="position:fixed;right:18px;top:80px;z-index:101;background:#00ff99;color:#181f1f;border:none;border-radius:50%;width:38px;height:38px;font-size:22px;box-shadow:0 0 8px #00ff99;cursor:pointer;display:none;">📰</button>
+    <div id="news-panel" class="news-panel">
+        <button id="news-close" onclick="toggleNewsPanel()" title="Bağla">✖</button>
+        <div id="news-content"></div>
+    </div>
+
+    <div id="modal-bg" class="modal-bg" onclick="closeModal()"></div>
+    <div id="modal" class="modal"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
